@@ -20,7 +20,7 @@ public class Bicicleteria {
     private float ganancias;
     private int cantidadDeVentas;
 
-    public void bicileteria() {
+    public void Bicileteria() {
         Bicicletas = new ArrayList<>(6);
         cantidadDeVentas = 0;
         ganancias = 0;
@@ -51,20 +51,26 @@ public class Bicicleteria {
     List<Bicicleta> ordenarBicis() {
         //metodo burbuja ordenado.
         Bicicleta aux;
-        boolean bandera=true;
-        for (int j = 0; j < Bicicletas.size()&& bandera==true; j++) {
-            bandera=false;
-            for (int i = 0; i < Bicicletas.size() - j; i++) {
+        boolean bandera = true;
+        for (int j = 0; j < Bicicletas.size() && bandera == true; j++) {
+            bandera = false;
+            for (int i = 0; i < Bicicletas.size() - 1 - j; i++) {
                 if (Bicicletas.get(i).getAño() > Bicicletas.get(i + 1).getAño()) {
                     aux = Bicicletas.get(i + 1);
                     Bicicletas.set(i + 1, Bicicletas.get(i));
                     Bicicletas.set(i, aux);
-                    bandera=true;
+                    bandera = true;
                 }
             }
-            
+
         }
         return Bicicletas;
+    }
+
+    void mostrarTodo() {
+        for (int i = 0; i < Bicicletas.size(); i++) {
+            System.out.println(Bicicletas.get(i).toString());
+        }
     }
 }
 
